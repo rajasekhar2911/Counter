@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		body{
+			margin:0px;
+			text-align:center;
+		}
+		.cont{
+			position:relative;
+			top:120px;
+		}
+		.counter-heading {
+			font-size: 50px;
+			font-style:italic;			
+		}
+		.button {
+			margin: 8px;
+			border-radius: 7px;
+			padding: 5px;
+			border-color: black;
+			background-color: lightblue;
+		}
+	</style>
+	
+</head>
+
+<body>
+    <div class="cont">
+        <h1 class="counter-heading" style="font-size:50px; ">Counter</h1>
+        <p id="counterValue" style="font-size:50px;">0</p>
+        <div>
+            <button class="button" onclick="onDecrement()">DECREASE</button>
+            <button class="button" onclick="onReset()">RESET</button>
+            <button class="button" onclick="onIncrement()">INCREASE</button>
+        </div>
+    </div>
+	
+<script>
+	
+	let counterElement = document.getElementById("counterValue");
+
+	function onIncrement() {
+		let previousElement = counterElement.textContent;
+		let updatedCounterValue = parseInt(previousElement) + 1;
+		counterElement.textContent = updatedCounterValue;
+
+		if (updatedCounterValue > 0) {
+			counterElement.style.color = "green";
+		} else if (updatedCounterValue < 0) {
+			counterElement.style.color = "red";
+		} else {
+			counterElement.style.color = "black";
+		}
+	}
+
+	function onDecrement() {
+		let previousElement = counterElement.textContent;
+		let updatedCounterValue = parseInt(previousElement) - 1;
+		counterElement.textContent = updatedCounterValue;
+
+		if (updatedCounterValue > 0) {
+			counterElement.style.color = "green";
+		} else if (updatedCounterValue < 0) {
+			counterElement.style.color = "red";
+		} else {
+			counterElement.style.color = "black";
+		}
+	}
+
+	function onReset() {
+		let updatedCounterValue = 0;
+		counterElement.textContent = updatedCounterValue;
+		if (updatedCounterValue > 0) {
+			counterElement.style.color = "green";
+		} else if (updatedCounterValue < 0) {
+			counterElement.style.color = "red";
+		} else {
+			counterElement.style.color = "black";
+		}
+	}
+	
+</script>
+</body>
+
+</html>
